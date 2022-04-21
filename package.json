@@ -8,12 +8,13 @@
     "not dead",
     "not op_mini all"
   ],
+  "packageManager": "pnpm@6.32.8",
   "scripts": {
     "cscript": "tsc client.ts --outDir public",
-    "cthemes": "postcss styles/themes/*.css --dir public/themes --config styles/themes",
+    "cthemes": "postcss src/styles/themes/*.css --dir public/themes --config src/styles/themes",
     "mscript": "curl -d output_info=compiled_code --data-urlencode js_code@public/client.js https://closure-compiler.appspot.com/compile -o public/client.js",
-    "dev": "yarn cscript --watch --preserveWatchOutput & yarn cthemes --watch & next dev",
-    "build": "yarn cscript && yarn cthemes && yarn mscript && next build",
+    "dev": "pnpm cscript --watch --preserveWatchOutput & pnpm cthemes --watch & next dev",
+    "build": "pnpm cscript && pnpm cthemes && pnpm mscript && next build",
     "start": "next start",
     "lint": "eslint . --cache && stylelint **/*.css",
     "lint:fix": "eslint --fix . --cache && stylelint **/*.css",
@@ -37,6 +38,7 @@
     "@types/jsonwebtoken": "^8.5.7",
     "@types/node": "^14.18.13",
     "@types/react": "^18.0.5",
+    "@types/tailwindcss": "^3.0.10",
     "@typescript-eslint/eslint-plugin": "^4.33.0",
     "@typescript-eslint/parser": "^4.33.0",
     "autoprefixer": "^10.4.4",
@@ -51,7 +53,8 @@
     "prettier": "^2.6.2",
     "stylelint": "^14.7.0",
     "stylelint-config-standard": "^25.0.0",
-    "tailwindcss": "^2.2.19",
-    "typescript": "^4.6.3"
+    "tailwindcss": "^3.0.24",
+    "typescript": "^4.6.3",
+    "webpack": "^5.72.0"
   }
 }
