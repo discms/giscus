@@ -1,4 +1,8 @@
 .next/
 public/
-styles/
+src/styles/
 *.md
+pnpm-lock.yaml
+.github/**/*
+.vscode/**/*
+node_modules
