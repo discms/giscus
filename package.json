@@ -18,8 +18,70 @@
     "start": "next start",
     "lint": "eslint . --cache && stylelint **/*.css",
     "lint:fix": "eslint --fix . --cache && stylelint **/*.css",
-    "format": "prettier --check .",
-    "format:fix": "prettier --write ."
+    "format": "prettier --check ./src/**/*.{ts,tsx,css,json}",
+    "format:fix": "prettier --write ./src/**/*.{ts,tsx,css,json}"
+  },
+  "eslintConfig": {
+    "parser": "@typescript-eslint/parser",
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "eslint:recommended",
+      "next/core-web-vitals",
+      "plugin:prettier/recommended"
+    ],
+    "plugins": [
+      "@typescript-eslint"
+    ],
+    "rules": {
+      "@next/next/no-img-element": "off"
+    },
+    "globals": {
+      "React": "writable"
+    },
+    "overrides": [
+      {
+        "files": [
+          "*.ts",
+          "*.tsx"
+        ],
+        "extends": [
+          "plugin:@typescript-eslint/recommended"
+        ],
+        "rules": {
+          "@typescript-eslint/explicit-module-boundary-types": "off",
+          "@typescript-eslint/no-explicit-any": "off"
+        }
+      }
+    ],
+    "settings": {
+      "react": {
+        "version": "detect"
+      }
+    },
+    "ignorePatterns": [
+      "public/client.js",
+      "public/js/iframeResizer.contentWindow.min.js",
+      "public/js/iframeResizer.min.js"
+    ]
+  },
+  "eslintIgnore": [
+    ".next",
+    "node_modules",
+    "public",
+    "*.md",
+    ".github"
+  ],
+  "prettier": {
+    "printWidth": 100,
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "all",
+    "useTabs": false,
+    "tabWidth": 2,
+    "quoteProps": "consistent",
+    "arrowParens": "avoid"
   },
   "dependencies": {
     "@peculiar/webcrypto": "^1.3.3",
