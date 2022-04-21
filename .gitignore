@@ -44,3 +44,4 @@ public/themes/
 
 # CSS variables purging script (for development)
 src/styles/themes/purge.py
+.vscode
