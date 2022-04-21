@@ -62,12 +62,14 @@ module.exports = withBundleAnalyzer(
           },
         ];
       },
-      webpack: (config) => {
+      webpack: config => {
         config.resolve.alias = {
           ...config.resolve.alias,
-          react: 'preact/compat',
+          'react': 'preact/compat',
           'react-dom/test-utils': 'preact/test-utils',
           'react-dom': 'preact/compat',
+          '~/types': './src/lib/types',
+          '~/': './src/',
         };
 
         return config;
