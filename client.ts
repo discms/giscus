@@ -128,7 +128,7 @@
   const suggestion = `Please consider reporting this error at https://github.com/giscus/giscus/issues/new.`;
 
   // Listen to messages
-  window.addEventListener('message', (event) => {
+  window.addEventListener('message', event => {
     if (event.origin !== giscusOrigin) return;
 
     const { data } = event;
