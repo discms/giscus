@@ -1,0 +1,29 @@
+tasks:
+  - init: pnpm install && pnpm build
+    command: pnpm dev
+
+github:
+  prebuilds:
+   master: true
+   branches: true
+   pullRequests: true
+   pullRequestsFromForks: true
+   addBadge: true
+   addCheck: true
+   addLabel: 'gitpod'
+
+gitConfig:
+  tag.gpgsign: "true"
+  commit.gpgsign: "true"
+  init.defaultBranch: "main"
+  bash.showColorHints: "true"
+  bash.showUntrackedFiles: "true"
+  bash.showStashState: "true"
+  bash.showDirtyState: "true"
+  bash.showUpstream: "auto verbose"
+
+vscode:
+  extensions:
+   - esbenp.prettier-vscode
+   - editorconfig.editorconfig
+   - bradlc.vscode-tailwindcss
